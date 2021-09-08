@@ -10,7 +10,7 @@ import os
 
 def youtube():
     
-    PATH = "C:\\Users\\YOUR\\CHROMEDRIVER\\PATH\\chromedriver.exe"
+    PATH = "chromedriver.exe"
     
     
     string = texttt.split(' ', 1)[1]
@@ -26,8 +26,8 @@ def youtube():
     driver = webdriver.Chrome(PATH, options=options)
     driver.get("https://www.youtube.com")
     
-    consent = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/span')
-    consent.click()
+    #consent = driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/span')
+    #consent.click()
     
     try:
         element = WebDriverWait(driver, 10).until(
@@ -49,9 +49,11 @@ def youtube():
         driver.close()
         driver1 = webdriver.Chrome(PATH)
         driver1.get(url)
+        time.sleep(2)
     
-        consent1 = driver1.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/span')
-        consent1.click()
+        #consent1 = driver1.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/span')
+        #consent1.click()
+        
         
     finally:
         print("Watching {}".format(string))
